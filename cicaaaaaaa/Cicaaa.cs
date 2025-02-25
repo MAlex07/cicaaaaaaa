@@ -100,22 +100,22 @@ namespace cicaaaaaaa
             if (kor < 3)
             {
                 rendetlensegSzint += 20;
-                Console.WriteLine(rendetlensegSzint);
+                Console.WriteLine($"A korából adódó új rendetlenségi szintje: {rendetlensegSzint}");
             }
             else if (kor > 3 && kor < 6)
             {
                 rendetlensegSzint += 15;
-                Console.WriteLine(rendetlensegSzint);
+                Console.WriteLine($"A korából adódó új rendetlenségi szintje: {rendetlensegSzint}");
             }
             else if (kor > 6 && kor < 12)
             {
                 rendetlensegSzint += 5;
-                Console.WriteLine(rendetlensegSzint);
+                Console.WriteLine($"A korából adódó új rendetlenségi szintje: {rendetlensegSzint}");
             }
             else
             {
                 rendetlensegSzint += 0;
-                Console.WriteLine(rendetlensegSzint);
+                Console.WriteLine($"A korából adódó új rendetlenségi szintje: {rendetlensegSzint}");
             }
         }
 
@@ -124,8 +124,34 @@ namespace cicaaaaaaa
             if (szin == "narancssárga")
             {
                 rendetlensegSzint = 100;
+                Console.WriteLine($"Amiért narancssárag ezért autómatikusan {rendetlensegSzint} lesz a rendetlenségi szintje");
             }
 
+        }
+
+        public void fajtaJellegzetességek()
+        {
+            if (fajta ==  "Szfinx")
+            {
+                szin = "kopasz";
+                Console.WriteLine($"Mivel a macska {fajta} fajtájú ezért ilyen színű: {szin}");
+            }
+            else if (fajta == "Maine Coon")
+            {
+                suly += 5;
+                rendetlensegSzint -= 5;
+                Console.WriteLine($"Mivel a macska {fajta} fajtájú ezért ezek lesznek rá jellemzőek súly: {suly} és rendetlenségi szint: {rendetlensegSzint}");
+            }
+            else if (fajta == "Bengáli")
+            {
+                rendetlensegSzint += 10;
+                Console.WriteLine($"Mivel a macska {fajta} fajtájú ezért ezek lesznek rá jellemzőek rendetlenségi szintje: {rendetlensegSzint}");
+            }
+        }
+
+        public override string? ToString()
+        {
+            return $"A cica neve: {nev} / kora: {kor} / súlya: {suly} / fajtája: {fajta} / színe: {szin} / rendetlenségi szintje (0-100): {rendetlensegSzint} / mennyire drága fenn tartani (0-10): {fogyasztas} / neme: {nem} / éhes-e (true / false): {ehes} ";
         }
     }
     }
